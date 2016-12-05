@@ -1,0 +1,182 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-list/iron-list.html">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+<dom-module id="data-cv">
+  <template>
+    <style>
+      :host {
+        display: block;
+      };
+
+      p, ul, .technologies {
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: flex-start;
+      }
+
+      .flex-item {
+        margin: 0 10px;
+      }
+
+      .flex-item:nth-child(1) {
+        order: 0;
+        flex: 1 1 auto;
+        align-self: auto;
+      }
+
+      .flex-item:nth-child(2) {
+        order: 0;
+        flex: 1 1 auto;
+        align-self: auto;
+      }
+
+      .border-items {
+        margin: 10px 0;
+      }
+
+      paper-card {
+        border-radius: 5px;
+        margin: 5px 0;
+        padding: 10px;
+        width: 100%;
+      }
+
+      .card-content {
+        margin-top: 0;
+      }
+
+      .average {
+        font-size: 12px;
+      }
+
+      .date {
+        font-size: 14px;
+      }
+
+      li img {
+        height: 75px;
+        max-width: 165px;
+      }
+
+      .technologies-container {
+        display: flex;
+        text-align: center;
+      }
+      .technologies {
+        flex: 1;
+        margin: 15px 10px;
+        width: auto;
+      }
+
+      .technologies ul li {
+        display: inline-block;
+        margin: 5px 15px;
+      }
+
+      @media(min-width: 768px) {
+          .flex-item {
+            width: 50%;
+          }
+      }
+
+      @media(max-width: 768px) {
+          .flex-container {
+            flex-direction: column;
+          }
+      }
+
+    </style>
+
+    <iron-ajax
+        auto
+        handle-as="json"
+        url="../../data.json"
+        last-response="{{data}}">
+    </iron-ajax>
+
+    <div class="technologies-container">
+      <paper-card class="technologies" heading="Tecnologías utilizadas">
+        <ul>
+          <template is="dom-repeat" items="{{data.cv.technologies}}" as="technology">
+              <li>
+                <img src="{{technology}}" />
+              </li>
+          </template>
+        </ul>
+      </paper-card>
+    </div>
+
+
+    <div class="flex-container">
+      <div class="flex-item">
+        <ul class="card-content">
+          <template is="dom-repeat" items="{{data.cv.experience}}" as="experience">
+            <paper-card heading="{{experience.company}}">
+                <ul>
+                  <li> {{experience.position}} </li>
+                  <li> {{experience.level}} </li>
+                  <template is="dom-repeat" items="{{experience.date}}" as ="date">
+                    <li class="date">{{date.start}} - {{date.end}}</li>
+                  </template>
+                  <li>
+                  <li>Funciones:</li>
+                    <ol>
+                      <template is="dom-repeat" items="{{experience.functions}}" as="function">
+                        <li>{{function}}</li>
+                      </template>
+                    </ol>
+                  </li>
+                </ul>
+              </li>
+            </paper-card>
+          </template>
+        </ul>
+      </div>
+      <div class="flex-item">
+        <ul class="card-content">
+          <template is="dom-repeat" items="{{data.cv.training}}" as="training">
+            <paper-card heading="{{training.center}}">
+              <li>
+                <ul>
+                  <li>{{training.title}}</li>
+                  <template is="dom-repeat" items="{{training.date}}" as="date">
+                    <li class="date">{{date.start}} - {{date.end}}
+                  </template>
+                  <li class="average">{{training.average}}</li>
+                </ul>
+              </li>
+            </paper-card>
+          </template>
+        </ul>
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+    class DataCv {
+      beforeRegister() {
+        this.is = 'data-cv';
+        this.properties = {};
+      }
+      ready() {}
+    }
+
+    Polymer(DataCv);
+  </script>
+</dom-module>
