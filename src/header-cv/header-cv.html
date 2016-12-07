@@ -13,11 +13,16 @@
         padding: 10px 20px;
       }
 
-      h1 {
+      h1, ul {
         display: inline-block;
         color: white;
         font-family: 'Source Sans Pro', sans-serif;
         letter-spacing: 1.5px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
       }
 
       .image-photo {
@@ -42,7 +47,7 @@
 
       .flex-item:nth-child(2) {
         order: 0;
-        flex: 1 1 auto;
+        flex: 2 1 auto;
         align-self: auto;
       }
 
@@ -65,9 +70,11 @@
       </div>
 
       <div class="container flex-item">
-        <h5>
-
-        </h5>
+        <ul>
+          <li>{{data.cv.professional}}</li>
+          <li>{{data.cv.city}}</li>
+          <li>{{data.cv.birthdate}}</li>
+        </ul>
       </div>
 
       <div class="container flex-item image-photo">
