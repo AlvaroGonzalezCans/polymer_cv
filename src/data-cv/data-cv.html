@@ -1,5 +1,4 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/iron-list/iron-list.html">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
@@ -102,13 +101,6 @@
 
     </style>
 
-    <iron-ajax
-        auto
-        handle-as="json"
-        url="../../data.json"
-        last-response="{{data}}">
-    </iron-ajax>
-
     <div class="technologies-container">
       <paper-card class="technologies" heading="Tecnologías utilizadas">
         <ul>
@@ -120,7 +112,6 @@
         </ul>
       </paper-card>
     </div>
-
 
     <div class="flex-container">
       <div class="flex-item">
@@ -172,7 +163,11 @@
     class DataCv {
       beforeRegister() {
         this.is = 'data-cv';
-        this.properties = {};
+        this.properties = {
+          data: {
+            type: Object
+          }
+        };
       }
       ready() {}
     }

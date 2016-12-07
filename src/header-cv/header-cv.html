@@ -5,7 +5,7 @@
   <template>
     <style>
       :host {
-        --header-background: #536DFE;
+        --header-background: #4285F4;
       }
 
       header {
@@ -36,11 +36,17 @@
 
       .flex-item:nth-child(1) {
         order: 0;
-        flex: 2 1 auto;
+        flex: 1 1 auto;
         align-self: auto;
       }
 
       .flex-item:nth-child(2) {
+        order: 0;
+        flex: 1 1 auto;
+        align-self: auto;
+      }
+
+      .flex-item:nth-child(3) {
         order: 0;
         flex: 0 1 auto;
         align-self: auto;
@@ -54,12 +60,18 @@
     <header id="header" class="flex-container">
       <div class="container flex-item">
         <h1>
-          {{name}} {{lastName}}
+          {{data.cv.name}} {{data.cv.lastName}}
         </h1>
       </div>
 
+      <div class="container flex-item">
+        <h5>
+
+        </h5>
+      </div>
+
       <div class="container flex-item image-photo">
-        <iron-image src="{{imageUser}}" width="65"></iron-image>
+        <iron-image src="{{data.cv.imageUser}}" width="65"></iron-image>
       </div>
     </header>
 
@@ -70,25 +82,17 @@
       beforeRegister() {
         this.is = 'header-cv';
         this.properties = {
-          name: {
-            type: String,
-            notify: true
-          },
-          lastName: {
-            type: String,
-            notify: true
-          },
-          imageUSer: {
-            type: String,
-            notify: true
+          data: {
+            type: Object
           }
-        };
+        }
       }
-      ready() {
-        this.name = this.name;
-        this.lastName = this.lastName;
-        this.imageUSer = this.imageUSer;
-      }
+
+      ready() {}
+
+      computedFullName(name, lastName) {
+        return `${name} ${lastName}`;
+      };
     }
 
     Polymer(HeaderCv);
