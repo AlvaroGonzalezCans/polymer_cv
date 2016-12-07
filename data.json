@@ -1,0 +1,147 @@
+{
+    "cv": {
+        "name": "Álvaro",
+        "lastName": "González Canseco",
+        "imageUser": "https://www.infojobs.net/candidato.foto?id_candidato=4648B0FD-E8A9-107A-1F5230E9E20ADD99&dgv=9218861913144562418",
+        "city": "Madrid",
+        "birthdate": "14/06/1991",
+        "professional": "Desarrollador FrontEnd",
+        "technologies": [
+            "assets/img/angularjs.jpg",
+            "assets/img/bootstrap.jpg",
+            "assets/img/bower.jpg",
+            "assets/img/css3.jpg",
+            "assets/img/git.jpg",
+            "assets/img/gulp.jpg",
+            "assets/img/html5.jpg",
+            "assets/img/jquery.jpg",
+            "assets/img/js.jpg",
+            "assets/img/polymer.jpg",
+            "assets/img/sass.jpg"
+        ],
+        "languages": [
+            {
+                "language": "",
+                "level": ""
+            }
+        ],
+        "experience": [
+            {
+                "company": "s|ngular",
+                "logo":"",
+                "position": "Junior frontend developer",
+                "date": [
+                    {
+                        "start": "Septiembre 2015",
+                        "end": "Actualmente"
+                    }
+                ],
+                "level": "",
+                "functions": [
+                    "Desarrollo de aplicaciones a nivel interno usando AngularJS y Polymer",
+                    "Creación de componentes en HTML5, CSS3 con diseño responsive y MOBILE FIRST mediante directivas de AngularJS. Usando tecnologías como Gulp, Jade y SaSS. Añadiendo accesibilidad y usabilidad mediante JavaScript y Aria",
+                    "Maquetación de la web corporativa. Utilizando HTML5, CSS3 y Bootstrap. Usando como entorno virtual de desarrollo Vagrant",
+                    "Desarrollo de la parte front para proyecto ecommerce. Usando HTML5, CSS3 (SaSS), Bootstrap, JQuery y Javascript. Además de su intgración en el proyecto con las plantillas de Laravel"
+                ]
+            },
+            {
+                "company": "CESA",
+                "logo":"",
+                "position": "Técnico informático",
+                "date": [
+                    {
+                        "start": "Octubre 2014",
+                        "end": "Julio 2015"
+                    }
+                ],
+                "level": "",
+                "functions": [
+                    "Administración de usuarios con servidores Windows, usando: AD, DNS, permisos, carpetas compartidas",
+                    "Administración de antivirus corporativo con Trend Micro Office Scan",
+                    "Resolución de incidencias con Numara Footprints, siendo el soporte de nivel 2",
+                    "Administración y gestión de cuentas de correo con Microsoft Exchange 2013",
+                    "Administración y control del backup corporativo con Symantec Backup Exec 2014",
+                    "Administración y gestión de las maquetaciones de los equipos mediante VMWare Mirage",
+                    "Administración y gestión de Lotus Notes 8.5 y Lotus Domino 8.5"
+                ]
+            },
+            {
+                "company": "Seringe",
+                "logo":"",
+                "position": "Técnico microinformático",
+                "date": [
+                    {
+                        "start": "Abril 2010",
+                        "end": "Septiembre 2014"
+                    }
+                ],
+                "level": "",
+                "functions": [
+                    "Realización de migraciones de equipos para empresas como Pelayo Mutua de Seguros, Hospital Sagrado Corazón, Hospital Universitario Marqués de Valdecilla, Consejería de Educación.",
+                    "Realización de migraciones en ámbito nacional.",
+                    "Configuración del equipo con nuevas políticas, iniciar servicios, instalar y configurar impresoras, backup del equipo antiguo, cambio nombre de máquina, introducir equipo al dominio, realizar bginfo y configurar VNC."
+                ]
+            },
+            {
+                "company": "Everis",
+                "logo":"",
+                "position": "Administrador junior en sistemas",
+                "date": [
+                    {
+                        "start": "Marzo 2012",
+                        "end": "Junio 2012"
+                    }
+                ],
+                "level": "",
+                "functions": [
+                    "Realizando tareas de resolución de incidencias tanto por vía telefónica como remotamente.",
+                    "Administración de los dispositivos BlackBerry en el servidor de BlackBerry BES.",
+                    "Creación, configuración, migración, clonación y snapshots de servidores corporativos con VMWARE vSphere.",
+                    "Manejo de la consola de Microsoft Exchange en la administración de los usuarios tanto con buzones como listas dinámicas, así mismo como problemas con Outlook. ",
+                    "Creación de pequeños Scripts en CMD o PowerShell para la automatización de tareas. Scripts con Robocopy para la copia de archivos entre servidores corporativos. ",
+                    "Configuración de los servidores corporativos MDT de la empresa. ",
+                    "Manejo de la consola del servidor de Microsoft Lync en la administración de dichos usuarios.",
+                    " Configuración, formateo y actualización de los FortiMails y búsqueda de logs."
+                ]
+            }
+        ],
+        "training": [
+            {
+                "center": "Universidad Rey Juan Carlos",
+                "logo":"",
+                "title": "Ingeniería de Computadores",
+                "date": [
+                    {
+                        "start": "Septiembre 2012",
+                        "end": "Actualmente"
+                    }
+                ],
+                "average": ""
+            },
+            {
+                "center": "IES Antonio de Nebrija",
+                "logo":"",
+                "title": "Administración de sistemas informáticos en red",
+                "date": [
+                    {
+                        "start": "Septiembre 2010",
+                        "end": "Junio 2012"
+                    }
+                ],
+                "average": "6,9"
+            },
+            {
+                "center": "IES Antonio de Nebrija",
+                "logo":"",
+                "title": "Explotación de sistems informáticos",
+                "date": [
+                    {
+                        "start": "Septiembre 2008",
+                        "end": "Junio 2010"
+                    }
+                ],
+                "average": "5,7"
+            }
+        ]
+    }
+}

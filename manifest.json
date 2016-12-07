@@ -1,0 +1,6 @@
+{
+  "name": "polymer_cv",
+  "short_name": "polymer_cv",
+  "start_url": "/",
+  "display": "standalone"
+}

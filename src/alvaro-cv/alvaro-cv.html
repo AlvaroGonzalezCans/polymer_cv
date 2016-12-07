@@ -1,0 +1,37 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../header-cv/header-cv.html">
+<link rel="import" href="../data-cv/data-cv.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="alvaro-cv">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      handle-as="json"
+      url="../../data.json"
+      last-response="{{data}}">
+    </iron-ajax>
+
+    <header-cv data="{{data}}"></header-cv>
+
+    <data-cv data="{{data}}"></data-cv>
+  </template>
+
+  <script>
+    class AlvaroCv {
+      beforeRegister() {
+        this.is = 'alvaro-cv';
+      }
+      ready() {}
+    }
+
+    Polymer(AlvaroCv);
+  </script>
+</dom-module>
+
