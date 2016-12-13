@@ -2,22 +2,61 @@
     "cv": {
         "name": "Álvaro",
         "lastName": "González Canseco",
-        "imageUser": "https://www.infojobs.net/candidato.foto?id_candidato=4648B0FD-E8A9-107A-1F5230E9E20ADD99&dgv=9218861913144562418",
+        "imageUser": "https://www.infojobs.net/candidato.foto?id_candidato=4648B0FD-E8A9-107A-1F5230E9E20ADD99&dgv=706240160244311453",
         "city": "Madrid",
-        "birthdate": "14/06/1991",
+        "birthdate":
+            {
+                "day":"14",
+                "month":"Junio",
+                "year":"1991"
+            },
         "professional": "Desarrollador FrontEnd",
         "technologies": [
-            "assets/img/angularjs.jpg",
-            "assets/img/bootstrap.jpg",
-            "assets/img/bower.jpg",
-            "assets/img/css3.jpg",
-            "assets/img/git.jpg",
-            "assets/img/gulp.jpg",
-            "assets/img/html5.jpg",
-            "assets/img/jquery.jpg",
-            "assets/img/js.jpg",
-            "assets/img/polymer.jpg",
-            "assets/img/sass.jpg"
+            {
+                "name":"AngularJS",
+                "image":"assets/img/angularjs.jpg"
+            },
+            {
+                "name":"Bootstrap",
+                "image":"assets/img/bootstrap.jpg"
+            },
+            {
+                "name":"Bower",
+                "image":"assets/img/bower.jpg"
+            },
+            {
+                "name":"CSS3",
+                "image":"assets/img/css3.jpg"
+            },
+            {
+                "name":"GIT",
+                "image":"assets/img/git.jpg"
+            },
+            {
+                "name":"Gulp",
+                "image":"assets/img/gulp.jpg"
+            },
+            {
+                "name":"HTML5",
+                "image":"assets/img/html5.jpg"
+            },
+            {
+                "name":"jQuery",
+                "image":"assets/img/jquery.jpg"
+            },
+            {
+                "name":"JavaScript",
+                "image":"assets/img/js.jpg"
+            },
+            {
+                "name":"Polymer",
+                "image":"assets/img/polymer.jpg"
+            },
+            {
+                "name":"SaSS",
+                "image":"assets/img/sass.jpg"
+            }
+
         ],
         "languages": [
             {
