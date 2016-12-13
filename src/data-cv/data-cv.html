@@ -1,7 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/iron-list/iron-list.html">
+<link rel="import" href="../../bower_components/paper-tooltip/paper-tooltip.html">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<link rel="import" href="../../bower_components/google-map/google-map.html">
 
 <dom-module id="data-cv">
   <template>
@@ -83,8 +85,14 @@
       }
 
       .technologies ul li {
+        cursor: pointer;
         display: inline-block;
         margin: 5px 15px;
+      }
+
+      google-map {
+        height: 500px;
+        width: 100%;
       }
 
       @media(min-width: 768px) {
@@ -104,9 +112,10 @@
     <div class="technologies-container">
       <paper-card class="technologies" heading="Tecnologías utilizadas">
         <ul>
-          <template is="dom-repeat" items="{{data.cv.technologies}}" as="technology">
+          <template is="dom-repeat" items="{{data.cv.technologies}}" as="technology" indexAs="{{index}}">
               <li>
-                <img src="{{technology}}" />
+                <paper-tooltip>{{technology.name}}</paper-tooltip>
+                <img src="{{technology.image}}"/>
               </li>
           </template>
         </ul>
@@ -154,6 +163,7 @@
             </paper-card>
           </template>
         </ul>
+        <google-map latitude="40.3231045" longitude="-3.8690523" api-key="AIzaSyCvZ5H1R0Spkm5TkySLvoQDm4wpaEwByM8" zoom="14" mapType="satellite"></google-map>
       </div>
     </div>
 
@@ -170,6 +180,13 @@
         };
       }
       ready() {}
+
+      // showTechnologies() {
+      //   let data = this.data.cv.technologies;
+      //   let re = (img\/)(.*)(.jpg)$;
+      //   alert(re)
+      //   return re.search(data);
+      // }
     }
 
     Polymer(DataCv);

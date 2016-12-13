@@ -60,6 +60,11 @@
       iron-image {
         border-radius: 50%;
       }
+
+      .pointer {
+        cursor: pointer;
+      }
+
     </style>
 
     <header id="header" class="flex-container">
@@ -73,7 +78,7 @@
         <ul>
           <li>{{data.cv.professional}}</li>
           <li>{{data.cv.city}}</li>
-          <li>{{data.cv.birthdate}}</li>
+          <li on-tap="calculateAge" class="pointer">{{data.cv.birthdate.day}} {{data.cv.birthdate.month}} {{data.cv.birthdate.year}} | {{age}}</li>
         </ul>
       </div>
 
@@ -95,12 +100,17 @@
         }
       }
 
-      ready() {}
+      ready() {
+      }
 
-      computedFullName(name, lastName) {
-        return `${name} ${lastName}`;
-      };
+      calculateAge() {
+        let data = this.data;
+        let date = new Date();
+        let year = date.getFullYear();
+        this.age = year - data.cv.birthdate.year + " años";
+      }
     }
+
 
     Polymer(HeaderCv);
   </script>
