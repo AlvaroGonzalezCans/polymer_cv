@@ -5,22 +5,23 @@
   <template>
     <style>
       :host {
-        --header-background: #4285F4;
+
       }
 
       header {
-        background-color: var(--header-background, blue);
+        background-color: var(--header-cv-background-color, blue);
         padding: 10px 20px;
       }
 
       h1, ul {
         display: inline-block;
-        color: white;
+        color: var(--header-cv-title-color, white);
         font-family: 'Source Sans Pro', sans-serif;
         letter-spacing: 1.5px;
       }
 
       ul {
+        color: var(--header-cv-info-color, white);
         list-style: none;
         padding-left: 0;
       }
@@ -65,6 +66,30 @@
         cursor: pointer;
       }
 
+      @media(max-width: 768px) {
+
+        .flex-container {
+          display: block;
+        }
+
+        .flex-item:nth-child(1),
+        .flex-item:nth-child(3) {
+          text-align: center;
+        }
+
+        .flex-item:nth-child(2) {
+          display: none;
+        }
+
+        .image-photo {
+          transform: initial;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+      }
+
     </style>
 
     <header id="header" class="flex-container">
@@ -83,7 +108,7 @@
       </div>
 
       <div class="container flex-item image-photo">
-        <iron-image src="{{data.cv.imageUser}}" width="65"></iron-image>
+        <iron-image src="{{data.cv.imageUser}}"></iron-image>
       </div>
     </header>
 

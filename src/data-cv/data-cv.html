@@ -95,6 +95,19 @@
         width: 100%;
       }
 
+      .logo {
+        max-width: 100%;
+        width: 100px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+
+      .training-logo {
+        height: 50px;
+        width: auto;
+      }
+
       @media(min-width: 768px) {
           .flex-item {
             width: 50%;
@@ -127,6 +140,7 @@
         <ul class="card-content">
           <template is="dom-repeat" items="{{data.cv.experience}}" as="experience">
             <paper-card heading="{{experience.company}}">
+                <img src="{{experience.logo}}" class="logo"></img>
                 <ul>
                   <li> {{experience.position}} </li>
                   <li> {{experience.level}} </li>
@@ -151,6 +165,7 @@
         <ul class="card-content">
           <template is="dom-repeat" items="{{data.cv.training}}" as="training">
             <paper-card heading="{{training.center}}">
+            <img class="logo training-logo" src="{{training.logo}}"></img>
               <li>
                 <ul>
                   <li>{{training.title}}</li>
@@ -163,7 +178,7 @@
             </paper-card>
           </template>
         </ul>
-        <google-map latitude="40.3231045" longitude="-3.8690523" api-key="AIzaSyCvZ5H1R0Spkm5TkySLvoQDm4wpaEwByM8" zoom="14" mapType="satellite"></google-map>
+        <google-map latitude="40.3231045" longitude="-3.8690523" api-key="AIzaSyCvZ5H1R0Spkm5TkySLvoQDm4wpaEwByM8" zoom="14" map-type="satellite" disable-zoom></google-map>
       </div>
     </div>
 
