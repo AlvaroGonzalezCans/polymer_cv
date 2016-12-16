@@ -2,7 +2,7 @@
     "cv": {
         "name": "Álvaro",
         "lastName": "González Canseco",
-        "imageUser": "https://www.infojobs.net/candidato.foto?id_candidato=4648B0FD-E8A9-107A-1F5230E9E20ADD99&dgv=706240160244311453",
+        "imageUser": "https://pbs.twimg.com/profile_images/378800000007127942/58bdd83890f3998e726bb47938e863bc_bigger.jpeg",
         "city": "Madrid",
         "birthdate":
             {
@@ -67,7 +67,7 @@
         "experience": [
             {
                 "company": "s|ngular",
-                "logo":"",
+                "logo":"assets/img/logos/sngular.png",
                 "position": "Junior frontend developer",
                 "date": [
                     {
@@ -85,7 +85,7 @@
             },
             {
                 "company": "CESA",
-                "logo":"",
+                "logo":"assets/img/logos/cesa.png",
                 "position": "Técnico informático",
                 "date": [
                     {
@@ -106,7 +106,7 @@
             },
             {
                 "company": "Seringe",
-                "logo":"",
+                "logo":"assets/img/logos/seringe.png",
                 "position": "Técnico microinformático",
                 "date": [
                     {
@@ -123,7 +123,7 @@
             },
             {
                 "company": "Everis",
-                "logo":"",
+                "logo":"assets/img/logos/everis.png",
                 "position": "Administrador junior en sistemas",
                 "date": [
                     {
@@ -147,7 +147,7 @@
         "training": [
             {
                 "center": "Universidad Rey Juan Carlos",
-                "logo":"",
+                "logo":"assets/img/logos/urjc.png",
                 "title": "Ingeniería de Computadores",
                 "date": [
                     {
