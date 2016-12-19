@@ -4,6 +4,7 @@
 <link rel="import" href="../../bower_components/paper-tooltip/paper-tooltip.html">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link rel="import" href="../../bower_components/google-map/google-map.html">
+<link rel="import" href="../../bower_components/iron-swipeable-container/iron-swipeable-container.html">
 
 <dom-module id="data-cv">
   <template>
@@ -90,6 +91,10 @@
         margin: 5px 15px;
       }
 
+      .position {
+        color: var(--data-cv-experience-position-color, blue);
+      }
+
       google-map {
         height: 500px;
         width: 100%;
@@ -139,46 +144,52 @@
       <div class="flex-item">
         <ul class="card-content">
           <template is="dom-repeat" items="{{data.cv.experience}}" as="experience">
-            <paper-card heading="{{experience.company}}">
-                <img src="{{experience.logo}}" class="logo"></img>
-                <ul>
-                  <li> {{experience.position}} </li>
-                  <li> {{experience.level}} </li>
-                  <template is="dom-repeat" items="{{experience.date}}" as ="date">
-                    <li class="date">{{date.start}} - {{date.end}}</li>
-                  </template>
-                  <li>
-                  <li>Funciones:</li>
-                    <ol>
-                      <template is="dom-repeat" items="{{experience.functions}}" as="function">
-                        <li>{{function}}</li>
-                      </template>
-                    </ol>
-                  </li>
-                </ul>
-              </li>
-            </paper-card>
+            <iron-swipeable-container>
+              <paper-card heading="{{experience.company}}">
+                  <img src="{{experience.logo}}" class="logo"></img>
+                  <ul>
+                    <li class="position"> {{experience.position}} </li>
+                    <li> {{experience.level}} </li>
+                    <template is="dom-repeat" items="{{experience.date}}" as ="date">
+                      <li class="date">{{date.start}} - {{date.end}}</li>
+                    </template>
+                    <li>
+                    <li>Funciones:</li>
+                      <ol>
+                        <template is="dom-repeat" items="{{experience.functions}}" as="function">
+                          <li>{{function}}</li>
+                        </template>
+                      </ol>
+                    </li>
+                  </ul>
+                </li>
+              </paper-card>
+            </iron-swipeable-container>
           </template>
         </ul>
       </div>
       <div class="flex-item">
         <ul class="card-content">
           <template is="dom-repeat" items="{{data.cv.training}}" as="training">
-            <paper-card heading="{{training.center}}">
-            <img class="logo training-logo" src="{{training.logo}}"></img>
-              <li>
-                <ul>
-                  <li>{{training.title}}</li>
-                  <template is="dom-repeat" items="{{training.date}}" as="date">
-                    <li class="date">{{date.start}} - {{date.end}}
-                  </template>
-                  <li class="average">{{training.average}}</li>
-                </ul>
-              </li>
-            </paper-card>
+            <iron-swipeable-container swipe-style="curve">
+              <paper-card heading="{{training.center}}">
+                <img class="logo training-logo" src="{{training.logo}}"></img>
+                <li>
+                  <ul>
+                    <li>{{training.title}}</li>
+                    <template is="dom-repeat" items="{{training.date}}" as="date">
+                      <li class="date">{{date.start}} - {{date.end}}
+                    </template>
+                    <li class="average">{{training.average}}</li>
+                  </ul>
+                </li>
+              </paper-card>
+            </iron-swipeable-container>
           </template>
         </ul>
-        <google-map latitude="40.3231045" longitude="-3.8690523" api-key="AIzaSyCvZ5H1R0Spkm5TkySLvoQDm4wpaEwByM8" zoom="14" map-type="satellite" disable-zoom></google-map>
+        <paper-card>
+          <google-map latitude="40.3231045" longitude="-3.8690523" api-key="{{apiKey}}" zoom="14" map-type="roadmap" disable-zoom></google-map>
+        </paper-card>
       </div>
     </div>
 
@@ -191,17 +202,14 @@
         this.properties = {
           data: {
             type: Object
+          },
+          apiKey: {
+            type: String,
+            value: 'AIzaSyCvZ5H1R0Spkm5TkySLvoQDm4wpaEwByM8'
           }
         };
       }
       ready() {}
-
-      // showTechnologies() {
-      //   let data = this.data.cv.technologies;
-      //   let re = (img\/)(.*)(.jpg)$;
-      //   alert(re)
-      //   return re.search(data);
-      // }
     }
 
     Polymer(DataCv);
