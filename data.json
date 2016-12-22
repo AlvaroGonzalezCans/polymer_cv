@@ -4,6 +4,25 @@
         "lastName": "González Canseco",
         "imageUser": "https://pbs.twimg.com/profile_images/378800000007127942/58bdd83890f3998e726bb47938e863bc_bigger.jpeg",
         "city": "Móstoles - Madrid",
+        "contacts": {
+            "email":"agonzalezmc@gmail.com",
+            "logo":"assets/img/logos/email.png",
+            "text":"Envíame un email a agonzalezmc@gmail.com"
+        },
+        "ssnn": [
+            {
+                "contact":"Linkedin",
+                "url":"https://www.linkedin.com/in/alvarogonzalezcanseco",
+                "logo":"assets/img/logos/linkedin.png",
+                "text":"Visita mi perfil en Linkedin"
+            },
+            {
+                "contact":"Infojobs",
+                "url":"https://www.infojobs.net/candidate/cv/view/index.xhtml?dgv=8691309151615511347",
+                "logo":"assets/img/logos/infojobs.png",
+                "text":"Echa un ojo por Infojobs"
+            }
+        ],
         "birthdate":
             {
                 "day":"14",
