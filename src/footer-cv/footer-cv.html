@@ -1,0 +1,36 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+<dom-module id="footer-cv">
+  <template>
+    <style>
+      :host {
+
+      }
+
+    </style>
+
+    <footer>
+
+    </footer>
+
+  </template>
+
+  <script>
+    class FooterCv {
+      beforeRegister() {
+        this.is = 'footer-cv';
+        this.properties = {
+          data: {
+            type: Object
+          }
+        }
+      }
+
+      ready() {
+      }
+    }
+
+    Polymer(FooterCV);
+  </script>
+</dom-module>
