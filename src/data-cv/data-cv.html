@@ -5,6 +5,8 @@
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link rel="import" href="../../bower_components/google-map/google-map.html">
 <link rel="import" href="../../bower_components/iron-swipeable-container/iron-swipeable-container.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 
 <dom-module id="data-cv">
   <template>
@@ -20,6 +22,15 @@
       ul {
         list-style: none;
         padding-left: 0;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #E64A19;
       }
 
       .flex-container {
@@ -113,6 +124,39 @@
         width: auto;
       }
 
+      .contact {
+        bottom: 15px;
+        display: inline-block;
+        position: fixed;
+        right: 20px;
+        z-index: 99;
+      }
+
+      .contact paper-button {
+        background-color: #E64A19;
+        border: 1px solid #FFCCBC;
+        color: #FFCCBC;
+        font-family:  'Source Sans Pro', sans-serif;
+        letter-spacing: 1px;
+      }
+
+      paper-dialog {
+        padding: 50px;
+      }
+
+      paper-dialog h2 {
+        text-align: center;
+      }
+
+      .logos-ssnn {
+        display: inline-block;
+        height: initial !important;
+        transform: translateY(40%);
+        margin-right: 15px;
+        max-width: initial !important;
+        width: 30px;
+      }
+
       @media(min-width: 768px) {
           .flex-item {
             width: 50%;
@@ -126,6 +170,26 @@
       }
 
     </style>
+
+    <div class="contact">
+      <paper-button raised onclick="animated.open()"><strong>Contacto</strong></paper-button>
+    </div>
+
+    <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+      <h2>Contacto</h2>
+      <ul>
+        <template is="dom-repeat" items={{data.cv.ssnn}} as="social">
+          <li>
+            <img class="logos-ssnn" src="{{social.logo}}" alt="{{social.contact}}">
+            <a href="{{social.url}}" target="_blank"> {{social.text}} </a>
+          </li>
+        </template>
+        <li>
+          <img class="logos-ssnn" src="{{data.cv.contacts.logo}}" alt="">
+          <a href="mailto:{{data.cv.contacts.email}}"> {{data.cv.contacts.text}} </a>
+        </li>
+      </ul>
+    </paper-dialog>
 
     <div class="technologies-container">
       <paper-card class="technologies" heading="Tecnologías utilizadas">
