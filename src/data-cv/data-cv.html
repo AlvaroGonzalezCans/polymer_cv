@@ -69,6 +69,11 @@
         width: 100%;
       }
 
+      .paper-card-close {
+        height: 130px;
+        overflow: hidden;
+      }
+
       .card-content {
         margin-top: 0;
       }
@@ -157,6 +162,10 @@
         width: 30px;
       }
 
+      .open-functions-icon {
+        color: #4285F4;
+      }
+
       @media(min-width: 768px) {
           .flex-item {
             width: 50%;
@@ -209,7 +218,7 @@
         <ul class="card-content">
           <template is="dom-repeat" items="{{data.cv.experience}}" as="experience">
             <iron-swipeable-container>
-              <paper-card heading="{{experience.company}}">
+              <paper-card heading="{{experience.company}}" class="paper-card-close">
                   <img src="{{experience.logo}}" class="logo"></img>
                   <ul>
                     <li class="position"> {{experience.position}} </li>
@@ -218,7 +227,11 @@
                       <li class="date">{{date.start}} - {{date.end}}</li>
                     </template>
                     <li>
-                    <li>Funciones:</li>
+                    <li>Funciones:
+                      <template is="dom-if" if="{{experience.functions}} > 0">
+                        <span class="open-functions-icon" on-tap=""><i>[+]</i></span>
+                      </template>
+                    </li>
                       <ol>
                         <template is="dom-repeat" items="{{experience.functions}}" as="function">
                           <li>{{function}}</li>
@@ -274,6 +287,16 @@
         };
       }
       ready() {}
+
+      checkValues() {
+
+          for(let i=0; i < this.data.cv.experience.length; i++) {
+              let a = this.data.cv.experience[i].functions;
+              console.log(a)
+          }
+
+
+      }
     }
 
     Polymer(DataCv);
